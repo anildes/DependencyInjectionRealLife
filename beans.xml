@@ -1,0 +1,22 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="Bulb" class="com.realworld.dependencyIn.Bulb">
+		<property name="groundFloorSwitch" >
+ 		<ref local="GrndFlrSwitch"/>
+ 		</property>
+		<property name="topFloorSwitch" >
+			<ref local="TopFlrSwitch"/>
+		</property>
+		
+	</bean>
+	
+	 <bean id="GrndFlrSwitch" class="com.realworld.dependencyIn.GroundFloorSwitch"/>
+	 <bean id="TopFlrSwitch" class="com.realworld.dependencyIn.TopFloorSwitch"/>
+	   <bean id="Power" class="com.realworld.dependencyIn.PowerSupply"/>
+
+</beans>
+
+
